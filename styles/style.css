@@ -569,7 +569,7 @@ footer {
   .btn-group { margin-top: 8px; }
 
   main > section > figure > img {
-    grid-column: span 4;
+    grid-column: span 4!important;
     margin-top: auto;
     margin-bottom: auto;
 
@@ -583,6 +583,6 @@ footer {
 
   main > section > figure > figcaption {
     margin-top: 0;
-    grid-column: span 4;
+    grid-column: span 4!important;
   }
 }
