@@ -18,10 +18,12 @@
 
 	<header>
 
+		<!-- NAVBAR -->
 		<nav>
 			<a href="#" class="logo"><img src="./images/logos/full_logo_white_RGB.svg" alt="Discord Logo"></a>
 			<button id="hamburger-btn" type="button" name="button"><img src="./images/icons/hamburger-icon.svg" alt="Hamburger Menu"></button>
 
+			<!-- DESKTOP NAV -->
 			<ul>
 				<li><a href="#">Download</a></li>
 				<li><a href="#">Nitro</a></li>
@@ -30,11 +32,14 @@
 				<li><a href="#">Blog</a></li>
 			</ul>
 
+			<a href="#" class="btn btn--small">Open Discord</a>
+
 			<!-- MOBILE NAV -->
 			<nav id="mobile-nav">
 
 				<a href="#" class="logo"><img src="./images/logos/full_logo_black_RGB.svg" alt="Discord Logo"></a>
 
+				<!-- CLOSE MENU BTN -->
 				<button id="close-btn" type="button" name="button"><img src="./images/icons/close-icon.svg" alt="Close icon"></button>
 
 				<ul>
@@ -49,16 +54,21 @@
 			</nav>
 		</nav>
 
+		<!-- HEADER CONTENT -->
 		<section class="grid grid--padding">
 			<h1>Imagine a place...</h1>
 			<p>...where you can belong to a school club, a gaming group, or a worldwide art community. Where just you and a handful of friends can spend time together. A place that makes it easy to talk every day and hang out more often.</p>
 
+			<!-- CONTAINER FOR GROUPING -->
+			<!-- maybe no class necessary -->
 			<div class="btn-group">
 				<a href="#" class="btn btn--icon"><img src="./images/icons/download-icon.svg" alt="Download from App Store">Download from App Store</a>
 				<a href="#" class="btn btn--secondary">Open Discord in your browser</a>
 			</div>
 		</section>
 
+
+		<!-- picture container not necessary -->
 		<picture>
 			<img src="./images/header-image-desktop-left.svg" alt="">
 			<img src="./images/header-image-desktop-right.svg" alt="Characters chilling illustration">
@@ -69,7 +79,7 @@
 
 	<main>
 		<section>
-			<figure class="grid">
+			<figure class="grid reveal">
 				<img src="./images/study-group-illustration.svg" alt="Study group illustration">
 
 				<figcaption>
@@ -80,7 +90,7 @@
 		</section>
 
 		<section>
-			<figure class="grid">
+			<figure class="grid reveal">
 				<img src="./images/group-chilling-illustration.svg" alt="Group chilling illustration">
 
 				<figcaption>
@@ -91,7 +101,7 @@
 		</section>
 
 		<section>
-			<figure class="grid">
+			<figure class="grid reveal">
 				<img src="./images/roles-illustration.svg" alt="Discord user roles illustration">
 
 				<figcaption>
@@ -102,7 +112,7 @@
 		</section>
 
 		<section>
-			<figure class="grid grid--wide">
+			<figure class="grid grid--wide reveal">
 				<figcaption>
 					<h2 class="title-heading">Reliable tech for staying close</h2>
 					<p>Low-latency voice and video feels like you’re in the same room. Wave hello over video, watch friends stream their games, or gather up and have a drawing session with screen share.</p>
@@ -123,10 +133,61 @@
 	</main>
 
 	<footer>
-		<h4 class="title-heading">Imagine a place</h4>
+		<!-- GROUPING CONTAINER FOR MAX-WIDTH -->
+		<div class="grid grid--footer">
+			<section>
+				<h4 class="title-heading">Imagine a place</h4>
+			</section>
+
+			<div class="spacer"></div>
+
+			<section>
+				<h5>Product</h5>
+				<a href="#">Download</a>
+				<a href="#">Nitro</a>
+				<a href="#">Status</a>
+			</section>
+
+			<section>
+				<h5>Company</h5>
+				<a href="#">About</a>
+				<a href="#">Jobs</a>
+				<a href="#">Branding</a>
+				<a href="#">Newsroom</a>
+			</section>
+
+			<section>
+				<h5>Resources</h5>
+				<a href="#">College</a>
+				<a href="#">Support</a>
+				<a href="#">Safety</a>
+				<a href="#">Blog</a>
+				<a href="#">Feedback</a>
+				<a href="#">Developers</a>
+				<a href="#">Streamkit</a>
+			</section>
+
+			<section>
+				<h5>Policies</h5>
+				<a href="#">Terms</a>
+				<a href="#">Privacy</a>
+				<a href="#">Guidelines</a>
+				<a href="#">Acknowledgements</a>
+				<a href="#">Licenses</a>
+				<a href="#">Moderation</a>
+			</section>
+
+			<section>
+				<a href="index.html" class="logo"><img src="./images/logos/full_logo_white_RGB.svg" alt="Discord Logo"></a>
+				<a href="#" class="btn btn--small">Download</a>
+			</section>
+		</div>
+
+
 	</footer>
 
 	<script src="scripts/togglescript.js"></script>
+	<script src="scripts/revealscript.js"></script>
 </body>
 
 </html>
