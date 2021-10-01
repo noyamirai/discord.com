@@ -179,7 +179,7 @@ h4 {
   line-height: 120%;
 }
 
-/* p { line-height: 1.15; } */
+p { line-height: 1.625; }
 
 a {
   color: var(--white);
@@ -219,7 +219,20 @@ header {
   background-color: var(--bright-brand-color);
 
   min-height: 626px;
+  overflow: hidden;
+  padding-bottom: var(--section-spacing);
+  box-sizing: content-box;
 }
+
+  header > nav, header > section {
+    max-width: var(--page-max-width);
+    box-sizing: border-box;
+  }
+
+  header > section {
+    position: relative;
+    z-index: 100;
+  }
 
   .grid {
     display: grid;
@@ -240,7 +253,6 @@ header {
     }
 
   header > picture {
-
   }
 
     header > picture img {
@@ -274,7 +286,6 @@ header > nav {
 }
 
   header > nav a {
-
   }
 
     /* logo */
@@ -288,6 +299,18 @@ header > nav {
     display: none;
     flex-direction: row;
     align-items: center;
+  }
+
+  header > nav > button {
+    order: 2;
+  }
+
+  header > nav > ul li {
+    margin: 10px;
+    padding: 10px;
+
+    font-size: 16px; font-size: 1.6rem;
+    font-family: var(--font-body-bold);
   }
 
   /* MOBIEL NAV */
@@ -399,7 +422,6 @@ main {
     justify-content: center;
 
     background-color: var(--white);
-    /* padding: var(--section-spacing) var(--mobile-padding-side) var(--section-spacing) var(--mobile-padding-side); */
   }
 
   main > section:nth-of-type(even),
@@ -409,10 +431,6 @@ main {
 
   main > section:nth-of-type(2) > .grid > figcaption {
     order: 1;
-  }
-
-  main > section:last-of-type > div {
-    display: none;
   }
 
   main .grid > * {
@@ -428,7 +446,26 @@ main {
     }
 
   main > section:last-of-type {
+    position: relative;
+
     padding-top: 0;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 0 var(--page-gutter) var(--section-spacing) var(--page-gutter);
+  }
+
+  main > section:last-of-type > div {
+    display: block;
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+
+    text-align: center;
   }
 
   main > section:last-of-type .btn {
@@ -484,7 +521,7 @@ header .btn {
   color: var(--not-quite-black);
 }
 
-#mac-download-btn, #windows-download-btn, #browser-btn { display: none; }
+header .btn-group .btn:last-of-type { display: none; }
 
 button:focus {
   outline: none;
@@ -566,14 +603,18 @@ footer {
     overflow: hidden;
   }
 
+  /* header > section > p {
+    margin-bottom: 8px;
+  } */
+
   header > section > * { grid-column: span 5; }
 
   header > picture {
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 50%;
+    height: 50%; */
   }
 
   header > picture > img:first-of-type {
@@ -583,6 +624,10 @@ footer {
     left: 50%;
     margin-left: -70px;
     width: auto;
+  }
+
+  header .btn-group .btn:last-of-type {
+    display: block;
   }
 
   header > picture > img:nth-of-type(2) { display: none; }
@@ -601,20 +646,8 @@ footer {
   }
 
     main > section:last-of-type {
-      position: relative;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
       text-align: center;
     }
-
-      main > section:last-of-type > div {
-        display: block;
-        position: absolute;
-        top: 0;
-
-        width: 100%;
-      }
 
       main > section:nth-of-type(2) > .grid > figcaption {
         order: -1;
@@ -629,6 +662,23 @@ footer {
   :root {
     --num-grid-columns: 12;
     --section-spacing: 120px;
+  }
+
+  header > nav {
+    justify-content: flex-start;
+  }
+
+  nav > nav {
+    display: none;
+  }
+
+  header > nav > ul {
+    display: flex;
+    margin: 0 auto;
+  }
+
+  header > nav > button {
+    display: none;
   }
 
   main > section:first-of-type .grid > figcaption {
