@@ -392,12 +392,6 @@ main {
   section {
     padding: var(--section-spacing) var(--mobile-padding-side) var(--section-spacing) var(--mobile-padding-side);
 
-    /* opacity: 0;
-    transform: translateY(50px);
-    -webkit-transition: opacity .6s .1s,-webkit-transform .6s ease;
-    transition: opacity .6s .1s,-webkit-transform .6s ease;
-    transition: opacity .6s .1s,transform .6s ease;
-    transition: opacity .6s .1s,transform .6s ease,-webkit-transform .6s ease; */
   }
 
   .section--grey {
@@ -528,6 +522,8 @@ footer {
     --num-grid-columns: 8;
     --page-gutter: 40px;
     --section-spacing: 80px;
+    --mobile-padding: 0 40px;
+    --mobile-padding-side: 40px;
   }
 
   h1 {
@@ -541,25 +537,27 @@ footer {
   header {
     padding-bottom: var(--section-spacing);
     min-height: 626px;
+    overflow: hidden;
   }
 
   header > section > * { grid-column: span 5; }
 
-  /* header > picture {
+  header > picture {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
     width: 100%;
+    height: 100%;
   }
 
   header > picture > img:first-of-type {
     display: block;
-
     position: absolute;
     bottom: 0;
     left: 50%;
-  } */
+    margin-left: -70px;
+    width: auto;
+  }
 
   header > picture > img:nth-of-type(2) { display: none; }
 
