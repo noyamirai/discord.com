@@ -1,8 +1,6 @@
-# Night City Living - Procesverslag - FED211
-Welkom bij mijn Front-end Development project genaamd Night City Living! In dit
-verslag laat ik gedurende het eerste blok van leerjaar 2021/2022 zien wat ik
-allemaal heb gedaan om uiteindelijk tot een toffe website te komen.
-
+# DISCORD - Procesverslag - FED211
+WORDT SOON AANGEVULD!!!
+<!--
 ## Over mij
 
 <details open>
@@ -157,7 +155,7 @@ hier na afloop snel de uitkomsten van de meeting vastleggen
 
 </details>
 
-
+ -->
 
 
 <!--
