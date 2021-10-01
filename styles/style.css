@@ -110,7 +110,8 @@ body {
   font-style: normal;
 
   color: var(--not-quite-black);
-  font-size: 16px; font-size: 1.6rem;
+  /* font-size: 16px; font-size: 1.6rem; */
+  font-size: clamp(16px,2vw,20px);
   /* line-height: 1.4; */
   line-height: 26px;
   font-weight: 500;
@@ -220,12 +221,15 @@ header {
   min-height: 626px;
 }
 
-  header > section {
+  .grid {
     display: grid;
 
     max-width: var(--page-max-width);
     grid-template-columns: repeat(var(--num-grid-columns), 1fr);
     gap: 0 20px;
+  }
+
+  .grid--padding {
     padding: var(--section-spacing) var(--page-gutter);
   }
 
@@ -391,11 +395,14 @@ main {
 
   section {
     padding: var(--section-spacing) var(--mobile-padding-side) var(--section-spacing) var(--mobile-padding-side);
-
   }
 
   .section--grey {
     background-color: var(--off-white);
+  }
+
+  main > .grid > * {
+    grid-column: span var(--num-grid-columns);
   }
 
     section > figure > figcaption {
@@ -526,13 +533,11 @@ footer {
     --mobile-padding-side: 40px;
   }
 
-  h1 {
-    font-size: 56px; font-size: 5.6rem;
-  }
+  h1 { font-size: 56px; font-size: 5.6rem; }
 
-  h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
-    margin-top: 40px;
-  }
+  h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p { margin-top: 40px; }
+
+  h2 { font-size: 48px; font-size: 4.8rem; }
 
   header {
     padding-bottom: var(--section-spacing);
@@ -562,4 +567,22 @@ footer {
   header > picture > img:nth-of-type(2) { display: none; }
 
   .btn-group { margin-top: 8px; }
+
+  main > section > figure > img {
+    grid-column: span 4;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    max-width: 678px;
+    max-height: 440px;
+
+    width: 100%;
+
+    object-fit: cover;
+  }
+
+  main > section > figure > figcaption {
+    margin-top: 0;
+    grid-column: span 4;
+  }
 }
