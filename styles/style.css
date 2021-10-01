@@ -82,6 +82,10 @@ html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: 
 
   --font-body: 'Whitney Medium', Helvetica, Arial, sans-serif;
   --font-body-bold: 'Whitney Semibold Regular', Helvetica, Arial, sans-serif;
+
+  --page-max-width: 1260px;
+  --page-gutter: 24px;
+  --num-grid-columns: 4;
 }
 
 /* =============================================================================
@@ -146,7 +150,8 @@ h1, .title-heading {
 }
 
 h1 {
-  font-size: 24px; font-size: 2.4rem;
+  font-size: clamp(24px, 5vw, 44px);
+  /* font-size: 24px; font-size: 2.4rem; */
 }
 
 .title-heading {
@@ -203,15 +208,28 @@ ol { list-style: decimal }
   #HEADER
 ============================================================================= */
 header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   position: relative;
 
   color: var(--white);
   background-color: var(--bright-brand-color);
+
+  min-height: 626px;
 }
 
   header > section {
-    padding: 56px var(--mobile-padding-side);
+    display: grid;
+
+    max-width: var(--page-max-width);
+    grid-template-columns: repeat(var(--num-grid-columns), 1fr);
+    gap: 0 20px;
+    padding: var(--section-spacing) var(--page-gutter);
   }
+
+  header > section > * { grid-column: span 4; }
 
     header h1 {
       color: var(--white);
@@ -246,6 +264,7 @@ header > nav {
   justify-content: space-between;
 
   height: 80px;
+  width: 100%;
 
   padding: var(--mobile-padding);
 }
@@ -472,6 +491,15 @@ button:focus {
   background-color: var(--not-quite-black);
   color: var(--white);
 }
+
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  flex-wrap: wrap;
+}
+
 /* =============================================================================
   #FOOTER
 ============================================================================= */
@@ -488,26 +516,58 @@ footer {
 /* =============================================================================
   #MEDIAQUERIES
 ============================================================================= */
-/* #XSMALL SIZE */
-@media only screen and (min-width: 530px) {
-
+@media only screen and (min-width: 638px) {
+  .btn {
+    width: auto;
+  }
 }
 
-/* #SMALL SIZE */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 768px) {
+/*
+  :root {
+    --num-grid-columns: 8;
+    --page-gutter: 40px;
+    --section-spacing: 80px;
+  }
 
-}
+  h1 {
+    font-size: 56px; font-size: 5.6rem;
+  }
 
-/* #MEDIUM SIZE */
-@media only screen and (min-width: 780px) {
+  h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+    margin-top: 40px;
+  }
 
-}
+  header {
+    padding-bottom: var(--section-spacing);
+    min-height: 626px;
+  }
 
-/* #LARGE SIZE */
-@media only screen and (min-width: 1150px) {
+  header > section > * { grid-column: span 5; }
 
-}
+  header > picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
 
-/* #XLARGE SIZE */
-@media only screen and (min-width: 1440px) {
+  header > picture > img:first-of-type {
+    position: absolute;
+
+    display: block;
+    bottom: 0;
+    left: 50%;
+    margin-left: -70px;
+  }
+
+  header > picture > img:nth-of-type(2) {
+    display: none;
+
+  }
+
+  .btn-group {
+    margin-top: 8px;
+  } */
 }
