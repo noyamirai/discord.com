@@ -177,7 +177,6 @@ h4 {
 
 a {
   color: var(--white);
-  /* font-weight: 600; */
   text-decoration: none;
 }
 
@@ -353,6 +352,11 @@ header > nav {
     color: var(--text-link);
   }
 
+  nav > nav > ul li a:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--focus-border-color);
+  }
+
   /* ACTIVE LINK */
   .active {
     color: var(--text-link);
@@ -381,13 +385,13 @@ main {
     background-color: var(--off-white);
   }
 
-  section > img {
-    margin-top: 24px;
-  }
+    section > figure > figcaption {
+      margin-top: 24px;
+    }
 
-  section > div {
-    margin-top: 24px;
-  }
+    section > figure > img {
+      margin-top: 24px;
+    }
 
   main > section:last-of-type {
     padding-top: 0;
@@ -396,71 +400,6 @@ main {
   main > section:last-of-type .btn {
     margin-top: 40px;
   }
-
-/* =============================================================================
-  #HAMBURGER MENU
-============================================================================= */
-.hamburger-menu {
-  display: flex;
-  opacity: 1;
-
-  position: absolute;
-
-  top: 50%;
-  right: 30px;
-
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  width: 45px;
-  height: 45px;
-
-  border-radius: 50%;
-
-  transform: translateY(-50%);
-
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
-  cursor: pointer;
-
-  background-color: #346CCF;
-  z-index: 550;
-}
-
-  /* BRON: https://codepen.io/designcouch/pen/Atyop*/
-  .hamburger-menu span {
-    display: block;
-
-    height: 3px;
-    width: 24px;
-
-    background: #FFF;
-    border-radius: 9px;
-
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-
-    -webkit-transition: .25s ease-in-out;
-    -moz-transition: .25s ease-in-out;
-    -o-transition: .25s ease-in-out;
-    transition: .25s ease-in-out;
-
-    -webkit-transform-origin: center;
-    -moz-transform-origin: center;
-    -o-transform-origin: center;
-    transform-origin: center;
-  }
-
-  .hamburger-menu span + span { margin-top: 5px; }
-
-  .open span:first-of-type { transform: rotate(-45deg) translate(-6px, 5px); }
-  .open span:nth-of-type(2) { opacity: 0;}
-  .open span:last-of-type { transform: rotate(45deg) translate(-6px, -5px); }
 
 /* =============================================================================
   #BUTTON
@@ -536,7 +475,16 @@ button:focus {
 /* =============================================================================
   #FOOTER
 ============================================================================= */
+footer {
+  padding: 80px 24px 64px 24px;
+  color: var(--white);
+  background-color: var(--not-quite-black);
+}
 
+  footer .title-heading {
+    font-size: 32px; font: 3.2rem;
+    color: var(--brand-color);
+  }
 /* =============================================================================
   #MEDIAQUERIES
 ============================================================================= */
