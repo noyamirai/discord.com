@@ -401,7 +401,7 @@ main {
     background-color: var(--off-white);
   }
 
-  main > .grid > * {
+  .grid > * {
     grid-column: span var(--num-grid-columns);
   }
 
