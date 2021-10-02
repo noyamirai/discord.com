@@ -323,8 +323,10 @@ header > nav {
   header > nav > .btn {
     display: none;
     margin: 0;
-  }
 
+    background-color: var(--white);
+    color: var(--not-quite-black);
+  }
 
     /* logo */
     .logo > img {
@@ -435,8 +437,18 @@ header > nav {
   }
 
   nav > nav > ul li a:hover {
-    color: var(--text-link);
+    text-decoration: underline;
   }
+
+  nav > nav > ul li a {
+    display: flex;
+    align-items: center;
+  }
+
+    nav > nav > ul li a > img {
+      margin-top: 2px;
+      transform: rotate(-90deg);
+    }
 
   nav > nav > ul li a:focus {
     outline: none;
@@ -644,7 +656,7 @@ header .btn:hover {
   background-color: var(--white)!important;
 }
 
-#download-page > header .btn {
+#download-page > header > section .btn {
   background-color: var(--brand-color);
   color: var(--white);
 }
@@ -672,6 +684,12 @@ button:focus {
 
 .btn--icon > img {
   margin-right: 8px;
+}
+
+.btn--dropdown > img {
+  margin-right: 0;
+  margin-left: 8px;
+  transform: rotate(90deg);
 }
 
 .btn--secondary, header .btn--secondary {
@@ -755,6 +773,21 @@ footer {
     grid-column: span 4;
     margin-bottom: 56px;
   }
+
+  .grid--footer > section:first-of-type > div {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+    .grid--footer > section:first-of-type > div a {
+      display: inline-block;
+      height: auto;
+    }
+
+    .grid--footer > section:first-of-type > div a + a {
+      margin-left: 24px;
+    }
 
   footer .title-heading {
     font-size: 32px; font: 3.2rem;
@@ -889,7 +922,7 @@ footer {
     margin: 0 auto;
   }
 
-  #download-page main > section ul li > figure img {
+  #download-page main > section ul li > figure > img {
     margin-top: 64px;
     width: auto;
     max-width: unset;
@@ -1067,10 +1100,6 @@ footer {
   }
 
   nav > nav {
-    display: none;
-  }
-
-  header > nav > .btn {
     display: none;
   }
 
