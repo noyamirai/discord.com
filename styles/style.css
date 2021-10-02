@@ -167,8 +167,9 @@ h2 {
 }
 
 h3 {
-  font-weight: 700;
-  font-size: 22px; font-size: 2.2rem;
+  line-height: 120%;
+  font-family: var(--font-normal-heading);
+  font-size: clamp(18px,3vw,32px);
 }
 
 h4 {
@@ -232,6 +233,24 @@ header {
   box-sizing: content-box;
 }
 
+  #download-page > header {
+    background-color: var(--not-quite-black);
+    min-height: auto;
+  }
+
+
+  #download-page header > section > div > p:first-of-type {
+    line-height: 140%;
+  }
+
+
+  .btn-group > p {
+    line-height: 24px;
+    font-size: 16px; font-size: 1.6rem;
+    text-align: center;
+    width: 100%;
+  }
+
   header > nav, header > section {
     max-width: var(--page-max-width);
     box-sizing: border-box;
@@ -267,6 +286,10 @@ header {
   header > picture {
   }
 
+  #download-page > header > section > picture {
+    display: none;
+  }
+
     header > picture img {
       display: block;
 
@@ -295,6 +318,7 @@ header > nav {
   width: 100%;
 
   padding: var(--mobile-padding);
+  z-index: 500;
 }
 
   header > nav > .btn {
@@ -441,6 +465,48 @@ main {
     background-color: var(--white);
   }
 
+  /* CARD CONTAINER */
+  #download-page main > section > ul {
+    grid-column: span var(--num-grid-columns);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+    #download-page main > section > ul li {
+      overflow: hidden;
+      height: 363px;
+      box-sizing: border-box;
+      border-radius: 16px;
+      padding: 56px;
+      color: var(--not-quite-black);
+
+      grid-column: span 1;
+      grid-row: span 2;
+      background-color: var(--off-white);
+
+      text-align: center;
+    }
+
+    #download-page main > section > ul li:last-of-type {
+      padding: 48px 40px;
+      border-radius: 0;
+      text-align: left;
+      height: auto;
+    }
+
+      #download-page main > section > ul li a {
+        margin-top: 16px;
+        display: inline-block;
+        width: auto;
+      }
+
+      #download-page main > section > ul li figure > img {
+        margin-top: 24px;
+        width: 100%;
+      }
+
+  /* BRON: DISCORD.COM */
   main > section > figure {
     opacity: 0;
     -webkit-transform: translateY(150px);
@@ -482,7 +548,7 @@ main {
       margin-top: 24px;
     }
 
-  main > section:last-of-type {
+  #home main > section:last-of-type {
     position: relative;
 
     padding-top: 0;
@@ -495,11 +561,11 @@ main {
     padding: 0 var(--page-gutter) var(--section-spacing) var(--page-gutter);
   }
 
-  main > section:last-of-type h4 {
+  #home main > section:last-of-type h4 {
     padding-top: 30px;
   }
 
-  main > section:last-of-type > div {
+  #home main > section:last-of-type > div {
     display: block;
     position: absolute;
     top: 0;
@@ -509,7 +575,7 @@ main {
     text-align: center;
   }
 
-  main > section:last-of-type .btn {
+  #home main > section:last-of-type .btn {
     margin-top: 40px;
   }
 
@@ -552,15 +618,38 @@ button {
   box-shadow: none;
   cursor: pointer;
 
-  /* transition: all 300ms ease-in-out; */
-
   margin-top: 24px;
+
+  -webkit-transition-property: background-color,color,-webkit-box-shadow;
+  transition-property: background-color,color,-webkit-box-shadow;
+  transition-property: background-color,color,box-shadow;
+  transition-property: background-color,color,box-shadow,-webkit-box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.btn:hover, #download-page header .btn:hover {
+  box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
+  background-color: hsl(235, 86.1%, 71.8%)!important;
 }
 
 header .btn {
   background-color: var(--white);
   color: var(--not-quite-black);
 }
+
+header .btn:hover {
+  color: var(--brand-color);
+  background-color: var(--white)!important;
+}
+
+#download-page > header .btn {
+  background-color: var(--brand-color);
+  color: var(--white);
+}
+
 
 header .btn-group .btn:last-of-type { display: none; }
 
@@ -591,6 +680,12 @@ button:focus {
   color: var(--white);
 }
 
+.btn--secondary:hover, header .btn--secondary:hover {
+  background-color: #36393f!important;
+  color: var(--white);
+  box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
+}
+
 .btn-group {
   display: flex;
   flex-direction: row;
@@ -601,6 +696,10 @@ button:focus {
   margin-top: 24px;
 
   gap: 24px;
+}
+
+#download-page .btn-group p, #download-page .btn-group .btn {
+  display: inline-block;
 }
 
 .btn-group .btn {
@@ -645,6 +744,14 @@ footer {
     margin-top: 8px;
   }
 
+  .grid--footer > section > a:hover {
+    text-decoration: underline;
+  }
+
+  .grid--footer > section:last-of-type > a:hover {
+    text-decoration: none;
+  }
+
   .grid--footer > section:first-of-type {
     grid-column: span 4;
     margin-bottom: 56px;
@@ -680,6 +787,10 @@ footer {
   .btn {
     width: auto;
   }
+
+  #download-page .btn {
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -695,11 +806,20 @@ footer {
     font-size: clamp(20px,4vw,40px);
   }
 
+  #download-page .btn {
+    width: auto;
+  }
+
   h1 { font-size: 56px; font-size: 5.6rem; }
 
   /* h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p { margin-top: 40px; } */
   header h1 + p {
     margin-top: 40px;
+  }
+
+  .btn-group > p {
+    text-align: left;
+    width: auto;
   }
 
   h2 { font-size: 48px; font-size: 4.8rem; }
@@ -708,6 +828,72 @@ footer {
     min-height: 626px;
     overflow: hidden;
     padding-bottom: var(--section-spacing);
+  }
+
+  #download-page header > section > * {
+    grid-column: span 4;
+  }
+
+  #download-page header {
+    min-height: auto;
+    padding-bottom: 0;
+  }
+
+  #download-page header > section > picture {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  #download-page header > section > picture > img:first-of-type {
+    display: block;
+
+    height: 100%;
+    width: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: unset;
+  }
+
+  #download-page header > section > div > p:first-of-type {
+    margin-top: 40px;
+    margin-bottom: 16px;
+  }
+
+  #download-page .btn-group {
+    margin-top: calc(16px + 24px);
+  }
+
+  #download-page main > section ul {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 156px auto 156px auto 156px;
+  }
+
+  #download-page main > section ul li {
+    height: 600px;
+  }
+
+  /* push down */
+  #download-page main > section ul li:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 2/span 2;
+  }
+
+  #download-page main > .grid {
+    margin: 0 auto;
+  }
+
+  #download-page main > section ul li > figure img {
+    margin-top: 64px;
+    width: auto;
+    max-width: unset;
   }
 
   header > picture img:last-of-type {
@@ -767,7 +953,7 @@ footer {
     width: 100%;
   }
 
-    main > section:last-of-type {
+    #home main > section:last-of-type {
       text-align: center;
     }
 
@@ -779,7 +965,7 @@ footer {
         order: -1;
       }
 
-      main > section:last-of-type {
+      #home main > section:last-of-type {
         padding-bottom: var(--section-spacing);
       }
 
@@ -814,6 +1000,15 @@ footer {
     padding-bottom: 0;
   }
 
+  header > nav > .btn {
+    display: block;
+  }
+
+  /* #download-page header > nav > .btn {
+    display: block;
+    visibility: hidden;
+  } */
+
   header > .grid > * {
     grid-column: 3/span 8;
     text-align: center;
@@ -830,6 +1025,19 @@ footer {
 
   header > picture img:last-of-type {
     margin-left: -1280px;
+  }
+
+  #download-page header > section > div {
+    text-align: left;
+    grid-column: span 6;
+  }
+
+  #download-page header > section > picture {
+    grid-column: 7/span 6;
+  }
+
+  #download-page .btn-group .btn, #download-page .btn-group p {
+    display: inline-block;
   }
 
   header > nav {
@@ -860,12 +1068,16 @@ footer {
   }
 
   header > nav > .btn {
-    display: block;
+    display: none;
   }
 
   header > nav > ul {
     display: flex;
     margin: 0 auto;
+  }
+
+  header > nav > ul li a:hover {
+    text-decoration: underline;
   }
 
   header > nav > button {
