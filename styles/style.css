@@ -246,6 +246,9 @@ header {
     header > section > * { grid-column: span 4; }
 
     header > section > p { font-size: clamp(16px,2vw,20px); }
+    #download-page header > section > div > p:first-of-type {
+      line-height: 140%;
+    }
 
     /* HEADER PICTURE WRAPPER */
     header > picture img {
@@ -266,7 +269,7 @@ header {
       background-color: var(--not-quite-black);
     }
 
-    #download-page header > section > div > p:first-of-type { line-height: 140%; }
+    #download-page .btn-group > p:first-of-type { line-height: 140%; }
 
     #download-page > header > section > picture { display: none; }
 
@@ -590,7 +593,7 @@ button:focus {
   transition-timing-function: ease-in-out;
 }
 
-.btn:hover, #download-page header > section > div > .btn:hover {
+.btn:hover, #download-page .btn-group > .btn:hover {
   box-shadow: 0 8px 15px rgb(0 0 0 / 20%);
   background-color: hsl(235, 86.1%, 71.8%)!important;
 }
@@ -648,7 +651,7 @@ header .btn {
 }
 
 /* #BUTTON GROUP */
-header > section > div {
+.btn-group {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -661,20 +664,20 @@ header > section > div {
 }
 
   /* #DOWNLOAD DETAILS */
-  header > section > div p {
+  .btn-group p {
     line-height: 24px;
     font-size: 16px; font-size: 1.6rem;
     text-align: center;
     width: 100%;
   }
 
-  header > section > div .btn { margin-top: 0; }
+  .btn-group .btn { margin-top: 0; }
 
-  #download-page header > section > div p, #download-page header > section > div .btn {
+  #download-page .btn-group p, #download-page .btn-group .btn {
     display: inline-block;
   }
 
-  #home header > section > div .btn:last-of-type { display: none; }
+  #home .btn-group .btn:last-of-type { display: none; }
 
 /* =============================================================================
   #FOOTER
@@ -772,7 +775,7 @@ footer {
 /* #SMALL */
 @media only screen and (min-width: 638px) {
   .btn { width: auto; }
-  #download-page header > .btn { width: 100%; }
+  #download-page header .btn { width: 100%; }
 }
 
 /* #MEDIUM */
@@ -860,6 +863,7 @@ footer {
     #download-page header > section > div > p:first-of-type {
       margin-top: 40px;
       margin-bottom: 16px;
+      line-height: 140%;
     }
 
   /* MAIN */
@@ -905,10 +909,11 @@ footer {
 
   /* BUTTONS */
   .btn, #download-page .btn { width: auto; }
-  header > section > div { margin-top: 24px; }
-  #download-page header > section > div { margin-top: calc(16px + 24px); }
+  .btn-group { margin-top: 24px; }
+  #download-page .btn-group { margin-top: calc(16px + 24px); }
+  #download-page header .btn { width: auto; }
 
-  header > section > div p {
+  .btn-group p {
     text-align: left;
     width: auto;
   }
@@ -957,7 +962,7 @@ footer {
       header > nav > .btn { display: block; }
 
     /* #HEADER CONTENT */
-    header > .grid > * {
+    #home header > .grid > * {
       grid-column: 3/span 8;
       text-align: center;
     }
@@ -965,12 +970,12 @@ footer {
     header > .grid > p { margin-bottom: 6px; }
 
     /* BUTTON GROUP */
-    header > section > div {
+    .btn-group {
       grid-column: span var(--num-grid-columns)!important;
       margin: 24px auto 0px auto;
     }
 
-    #home header > section > div .btn:last-of-type { display: block; }
+    #home .btn-group .btn:last-of-type { display: block; }
 
     header > picture img:last-of-type { margin-left: -1280px; }
 
@@ -989,16 +994,20 @@ footer {
       margin-left: -1030px;
     }
 
-  #download-page header > section > div {
+  #download-page .btn-group {
     text-align: left;
     grid-column: span 6;
   }
 
+  #download-page header > section > div { grid-column: span 6; }
   #download-page header > section > picture { grid-column: 7/span 6; }
 
-  #download-page header > section > div .btn,
-  #download-page header > section > div p { display: inline-block; }
+  #download-page .btn-group .btn,
+  #download-page .btn-group p { display: inline-block; }
 
+  #download-page .btn-group p {
+    width: auto;
+  }
   /* MOBILE NAV */
   nav > nav { display: none; }
 
